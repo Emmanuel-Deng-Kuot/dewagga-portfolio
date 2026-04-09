@@ -1,0 +1,1315 @@
+body {
+    --navbar-offset: 96px;
+    width: 100%;
+    margin: 0;
+    padding-top: var(--navbar-offset);
+    background: #fff;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+    body {
+        --navbar-offset: 110px;
+    }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.navbar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: transform .28s ease, opacity .28s ease;
+    will-change: transform;
+}
+
+.navbar-glow {
+    position: absolute;
+    width: min(763px, 100vw);
+    height: 200px;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 763px;
+    background: #a5ff93;
+    filter: blur(200px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    padding: 10px 12px;
+    border-radius: 1000px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #03040a;
+    backdrop-filter: blur(10px);
+    margin-top: 16px;
+    transition: background-color .28s ease, box-shadow .28s ease, border-color .28s ease, backdrop-filter .28s ease;
+    box-sizing: border-box;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.navbar-wrapper.scrolled .navbar {
+    background: rgba(3, 4, 10, 0.92);
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 12px 28px rgba(3, 4, 10, 0.24);
+    backdrop-filter: blur(14px);
+}
+
+.navbar-wrapper.is-hidden {
+    transform: translateY(-115%);
+    opacity: 0;
+}
+
+.logo {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.nav-links {
+    display: none;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #a1a6b0;
+    font-size: 12px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.hero {
+    display: flex;
+    padding: 24px 16px 60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.text-header {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.hero-tag {
+    display: flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.5px);
+    width: fit-content;
+    max-width: 100%;
+    font-size: 12px;
+    margin: 0;
+}
+
+.hero h1 {
+    width: min(100%, 18ch);
+    max-width: 360px;
+    margin: 0;
+    color: #03040a;
+    text-align: center;
+    font-size: clamp(28px, 8.4vw, 40px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+}
+
+.hero h1 span {
+    color: #a1a6b0;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
+.subtitle {
+    max-width: 320px;
+    margin: -6px auto 0;
+    color: #a1a6b0;
+    font-size: 14px;
+    line-height: 1.42;
+    text-align: center;
+}
+
+.contact-schedule-section {
+    width: 100%;
+    padding: 56px 16px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.contact-schedule-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.contact-schedule-left h2 {
+    margin: 0 0 8px;
+    color: #03040a;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+.contact-schedule-left {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        max-width: 80%;
+}
+
+.contact-schedule-subtitle {
+    margin: 0 0 20px;
+    color: #a1a6b0;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.contact-schedule-card {
+    background: #F2F2F2;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.contact-profile img {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+}
+
+.contact-profile h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #03040a;
+}
+
+.contact-profile span {
+    color: #a1a6b0;
+    font-size: 13px;
+}
+
+.contact-card-text {
+    margin: 0 0 18px;
+    color: #525866;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.contact-call-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 999px;
+    background: #03040a;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+.contact-call-btn:hover {
+    background: #fff;
+    color: #03040a;
+    border: 1px solid #03040a;
+}
+
+.contact-schedule-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-schedule-form input,
+.contact-schedule-form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d6d8de;
+    padding: 10px 4px;
+    font-size: 14px;
+    color: #03040a;
+    background: transparent;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.contact-schedule-form input::placeholder,
+.contact-schedule-form textarea::placeholder {
+    color: #9aa0a6;
+}
+
+.contact-schedule-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.contact-phone-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #d6d8de;
+    padding: 6px 0;
+}
+
+.contact-phone-field input {
+    border-bottom: none;
+    padding: 4px 0;
+}
+
+.contact-phone-flag {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: block;
+}
+
+.contact-country-code {
+    color: #707786;
+    font-size: 14px;
+}
+
+.contact-schedule-form label {
+    color: #4f5563;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.contact-class-chips {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contact-class-chips button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 11px 20px;
+    border: 1px solid #d0d5dd;
+    background: #f8f8f8;
+    color: #111827;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    letter-spacing: 0;
+    position: relative;
+}
+
+.contact-class-chips button::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #8f8f8f;
+    box-sizing: border-box;
+    flex: 0 0 16px;
+}
+
+.contact-class-chips button:hover {
+    border-color: #b4bcc8;
+    background: #fff;
+}
+
+.contact-class-chips button.selected {
+    background: #fff;
+    border-color: #bcc5d1;
+}
+
+.contact-class-chips button.selected::before {
+    border-color: #717478;
+    background: #6e7072;
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+.contact-submit-btn {
+    margin-top: 6px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 999px;
+    background: #03040a;
+    color: #fff;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+.contact-submit-btn:hover {
+    background: #fff;
+    color: #03040a;
+    border: 1px solid #03040a;
+}
+
+.contact-testimonial-section {
+    display: flex;
+    padding: 40px 16px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-testimonial-container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.contact-testimonial-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-testimonial-label {
+    margin: 0;
+    color: #03040a;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.104px;
+}
+
+.contact-testimonial-left h2 {
+    color: #03040a;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.32px;
+    margin: 0;
+}
+
+.contact-testimonial-light {
+    color: #a1a6b0;
+}
+
+.contact-testimonial-description {
+    color: #a1a6b0;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.45;
+    letter-spacing: -0.104px;
+    margin: 0;
+}
+
+.contact-testimonial-right {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: stretch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.contact-testimonial-card {
+    display: flex;
+    flex: 0 0 auto;
+    min-width: 280px;
+    width: 280px;
+    min-height: 180px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 14px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+}
+
+.contact-testimonial-card:hover {
+    border-color: #03040a;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.contact-testimonial-brand {
+    color: #a1a6b0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    letter-spacing: -0.112px;
+}
+
+.contact-testimonial-quote {
+    color: #03040a;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.16px;
+    margin: 0;
+    font-style: normal;
+}
+
+.contact-testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-testimonial-author strong {
+    color: #03040a;
+    font-family: Satoshi, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.contact-testimonial-author span {
+    color: #a1a6b0;
+    font-family: Satoshi, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.footer {
+    background: #050914;
+    color: #fff;
+    padding: 48px 20px 28px;
+    position: relative;
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 34px;
+}
+
+.footer-left {
+    max-width: 100%;
+}
+
+.logo-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.email {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #9aa0a6;
+    margin-bottom: 22px;
+}
+
+.contact-row span:first-child {
+    max-width: 68%;
+}
+
+.contact-row span:last-child {
+    white-space: nowrap;
+}
+
+.socials {
+    display: flex;
+    gap: 14px;
+}
+
+.socials a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1a1f2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.socials a:hover {
+    background: #2a3147;
+}
+
+.footer-right {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.links a {
+    color: #cfd3da;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    line-height: 1.5;
+}
+
+.links a:hover {
+    color: #fff;
+}
+
+.cta p {
+    font-size: 22px;
+    margin: 0 0 14px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+}
+
+.cta button {
+    padding: 13px 24px;
+    border-radius: 999px;
+    border: none;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.cta button:hover {
+    background: #03040a;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.divider {
+    height: 1px;
+    background: #1c2233;
+    margin: 44px 0 26px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #8b92a3;
+}
+
+.legal {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.legal a {
+    color: #8b92a3;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.legal a:hover {
+    color: #fff;
+}
+
+.footer-bg-text {
+    font-size: clamp(98px, 18vw, 250px);
+    font-weight: 800;
+    line-height: 0.78;
+    color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 100%;
+    overflow: visible;
+    margin-top: 34px;
+    margin-left: -4px;
+    white-space: nowrap;
+}
+
+.footer-bg-text:hover {
+    -webkit-text-stroke: 2px rgba(124, 58, 237, 0.8);
+}
+
+@media (min-width: 480px) {
+    .navbar-glow {
+        height: 250px;
+        top: -120px;
+    }
+
+    .hero {
+        padding: 28px 20px 80px;
+        gap: 28px;
+    }
+
+    .text-header {
+        padding: 0 20px;
+    }
+
+    .hero-tag {
+        padding: 9px 14px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        max-width: 430px;
+        font-size: 42px;
+    }
+
+    .subtitle {
+        max-width: 420px;
+        font-size: 15px;
+    }
+
+    .contact-schedule-section,
+    .contact-testimonial-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contact-schedule-left h2,
+    .contact-testimonial-left h2 {
+        font-size: 40px;
+    }
+
+    .contact-testimonial-card {
+        min-width: 300px;
+        width: 300px;
+        padding: 22px;
+        border-radius: 18px;
+        gap: 15px;
+    }
+
+    .contact-testimonial-brand {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .contact-testimonial-quote {
+        font-size: 18px;
+        letter-spacing: -0.18px;
+    }
+
+    .contact-testimonial-author strong {
+        font-size: 13px;
+    }
+
+    .contact-testimonial-author span {
+        font-size: 11.5px;
+    }
+
+    .footer {
+        padding: 70px 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        max-width: 85%;
+        padding: 12px;
+        margin-top: 20px;
+    }
+
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .btn-primary {
+        font-size: 13px;
+        padding: 10px 16px;
+        background: transparent;
+    }
+
+    .hero {
+        padding: 32px 40px 100px;
+        gap: 40px;
+    }
+
+    .text-header {
+        max-width: 792px;
+        padding: 0;
+        gap: 32px;
+    }
+
+    .hero-tag {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        width: auto;
+        max-width: 792px;
+        font-size: 52px;
+        letter-spacing: -0.05em;
+    }
+
+    .subtitle {
+        max-width: 560px;
+        font-size: 15px;
+    }
+
+    .contact-schedule-section {
+        padding: 74px 40px;
+    }
+
+    .contact-schedule-container {
+        gap: 36px;
+    }
+
+    .contact-form-row {
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .contact-schedule-left h2,
+    .contact-testimonial-left h2 {
+        font-size: 48px;
+    }
+
+    .contact-testimonial-section {
+        padding: 74px 40px;
+    }
+
+    .contact-testimonial-container {
+        gap: 36px;
+        max-width: 1240px;
+    }
+
+    .contact-testimonial-right {
+        gap: 16px;
+    }
+
+    .contact-testimonial-card {
+        min-width: 300px;
+        width: 300px;
+        min-height: 200px;
+        padding: 24px;
+        border-radius: 20px;
+        gap: 16px;
+    }
+
+    .contact-testimonial-brand {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .contact-testimonial-quote {
+        font-size: 20px;
+        letter-spacing: -0.2px;
+    }
+
+    .contact-testimonial-author strong {
+        font-size: 13px;
+    }
+
+    .contact-testimonial-author span {
+        font-size: 11.5px;
+    }
+
+    .footer {
+        padding: 80px 40px;
+    }
+
+    .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 60px;
+    }
+
+    .footer-left {
+        max-width: 50%;
+    }
+
+    .footer-right {
+        width: auto;
+        gap: 60px;
+    }
+
+    .contact-row {
+        gap: 24px;
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    .contact-row span:first-child {
+        max-width: none;
+    }
+
+    .socials {
+        gap: 15px;
+    }
+
+    .links a {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .cta p {
+        font-size: 13px;
+        margin-bottom: 12px;
+        color: #cfd3da;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+
+    .cta button {
+        padding: 9px 20px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .divider {
+        margin: 50px 0 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar {
+        max-width: 70%;
+    }
+
+    .hero {
+        padding: 32px 60px 120px;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+        letter-spacing: -0.055em;
+    }
+
+    .contact-schedule-section,
+    .contact-testimonial-section {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .contact-schedule-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 56px;
+    }
+
+    .contact-schedule-left h2,
+    .contact-testimonial-left h2 {
+        font-size: 52px;
+    }
+
+    .contact-testimonial-container {
+        flex-direction: row;
+        gap: 44px;
+        max-width: 1240px;
+    }
+
+    .contact-testimonial-left {
+        flex: 0 0 320px;
+        max-width: 340px;
+    }
+
+    .contact-testimonial-right {
+        gap: 18px;
+    }
+
+    .contact-testimonial-card {
+        min-width: 320px;
+        width: 320px;
+        border-radius: 24px;
+        padding: 28px 24px;
+        gap: 16px;
+    }
+
+    .contact-testimonial-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .footer {
+        padding: 90px 60px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .navbar {
+        max-width: 588px;
+        margin-top: 24px;
+    }
+
+    .logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-links {
+        gap: 24px;
+    }
+
+    .nav-links a,
+    .btn-primary {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 0;
+    }
+
+    .hero {
+        padding: 32px 120px 140px;
+        gap: 60px;
+    }
+
+    .hero h1 {
+        font-size: 80px;
+        letter-spacing: -0.06em;
+    }
+
+    .subtitle {
+        max-width: 600px;
+        font-size: 16px;
+    }
+
+    .contact-schedule-section,
+    .contact-testimonial-section,
+    .footer {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .contact-schedule-left h2,
+    .contact-testimonial-left h2 {
+        font-size: 60px;
+    }
+
+    .contact-testimonial-card {
+        min-width: 320px;
+        width: 320px;
+        min-height: 100px;
+    }
+
+    .contact-testimonial-brand {
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
+
+    .contact-testimonial-quote {
+        font-size: 22px;
+        letter-spacing: -0.24px;
+    }
+
+    .contact-testimonial-author strong {
+        font-size: 14px;
+    }
+
+    .contact-testimonial-author span {
+        font-size: 12px;
+    }
+
+    .contact-testimonial-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .email {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    .links a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-schedule-section {
+        padding: 36px 10px 40px;
+    }
+
+    .contact-schedule-container {
+        gap: 20px;
+    }
+
+    .contact-schedule-left {
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .contact-schedule-left h2 {
+        font-size: clamp(36px, 9.5vw, 44px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        margin: 0;
+    }
+
+    .contact-schedule-subtitle {
+        font-size: 14px;
+        line-height: 1.35;
+        color: #b2b6bf;
+        margin: 0 0 14px;
+    }
+
+    .contact-schedule-card {
+        position: relative;
+        border-radius: 20px;
+        padding: 20px 18px 16px;
+        background: #e9e9ea;
+        box-shadow: none;
+        overflow: hidden;
+        min-height: 250px;
+    }
+
+    .contact-schedule-card::before {
+        content: "";
+        position: absolute;
+        left: -16px;
+        top: 16px;
+        width: 92px;
+        height: 72px;
+        background-image: radial-gradient(rgba(3, 4, 10, 0.14) 1px, transparent 1px);
+        background-size: 6px 6px;
+        opacity: 0.35;
+        pointer-events: none;
+    }
+
+    .contact-profile {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 14px;
+        gap: 10px;
+    }
+
+    .contact-profile img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-profile h4 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.15;
+        color: #0f172a;
+    }
+
+    .contact-profile span {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+        font-weight: 400;
+        color: #a0a4ad;
+        line-height: 1.2;
+    }
+
+    .contact-card-text {
+        font-size: 16px;
+        line-height: 1.02;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: #0a0a0a;
+        margin: 0 0 18px;
+        max-width: 96%;
+    }
+
+    .contact-call-btn {
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 1;
+        min-width: 86px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        padding: 24px 20px 20px;
+    }
+
+    .logo-circle {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 24px;
+    }
+
+    .email {
+        font-size: clamp(28px, 7vw, 42px);
+    }
+
+    .socials img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .footer-right {
+        margin-top: 8px;
+    }
+
+    .links a {
+        font-size: clamp(18px, 4.5vw, 21px);
+        line-height: 1.45;
+    }
+
+    .cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cta p {
+        font-size: clamp(26px, 6.2vw, 32px);
+    }
+
+    .cta button {
+        font-size: clamp(15px, 3.9vw, 18px);
+    }
+
+    .footer-bottom {
+        font-size: clamp(13px, 3.7vw, 15px);
+    }
+
+    .footer-bg-text {
+        font-size: clamp(56px, 15vw, 72px);
+        line-height: 0.82;
+        margin-left: 0;
+    }
+}
