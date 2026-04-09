@@ -62,3 +62,4 @@ export const initMobileNavigation = () => {
   setMobileMenuState(false);
   updateNavbarState();
 };
+

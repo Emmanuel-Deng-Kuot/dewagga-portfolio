@@ -19,7 +19,7 @@ learningCards.forEach((card) => {
 });
 
 document.querySelector('.learning-enroll-btn')?.addEventListener('click', () => {
-  window.location.href = 'learning-details.html';
+  window.location.href = '/learning-details.html';
 });
 
 const animateCounter = (element, target, suffix) => {

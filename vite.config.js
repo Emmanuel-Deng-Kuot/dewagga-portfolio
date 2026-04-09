@@ -33,6 +33,12 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: resolve(__dirname, 'home.html'),
+        aboutMe: resolve(__dirname, 'pages/about-me.html'),
+        contact: resolve(__dirname, 'pages/contact.html'),
+        services: resolve(__dirname, 'pages/services.html'),
+        learning: resolve(__dirname, 'pages/learning.html'),
+        learningDetails: resolve(__dirname, 'pages/learning-details.html'),
+        error: resolve(__dirname, 'pages/error.html'),
       },
     },
   },

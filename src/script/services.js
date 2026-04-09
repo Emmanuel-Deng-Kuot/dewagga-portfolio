@@ -24,13 +24,13 @@ faqItems.forEach((item) => {
 });
 
 document.querySelector('.services-intro-btn')?.addEventListener('click', () => {
-  window.location.href = 'contact.html#contact';
+  window.location.href = '/contact.html#contact';
 });
 
 document.querySelectorAll('.services-offering-card-btn').forEach((btn) => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = 'contact.html#contact';
+    window.location.href = '/contact.html#contact';
   });
 });
 

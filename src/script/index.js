@@ -53,7 +53,7 @@ if ('IntersectionObserver' in window && stats.length) {
 
 const seeMoreButton = document.querySelector('.work-see-more');
 seeMoreButton?.addEventListener('click', () => {
-  window.location.href = 'pages/services.html';
+  window.location.href = '/services.html';
 });
 
 const normalizePath = (path) => path.replace(/\\/g, '/').replace(/\/+/g, '/');

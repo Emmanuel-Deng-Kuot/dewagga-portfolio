@@ -86,3 +86,4 @@ export const initPageAnimations = ({
     animateStaggerGroups(staggerGroups);
   });
 };
+

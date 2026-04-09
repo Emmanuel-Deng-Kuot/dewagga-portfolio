@@ -11,7 +11,7 @@ const countdown = window.setInterval(() => {
 
   if (seconds <= 0) {
     window.clearInterval(countdown);
-    window.location.href = '../home.html';
+    window.location.href = '/home.html';
   }
 }, 1000);
 
