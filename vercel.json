@@ -1,0 +1,18 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/home.html",
+      "permanent": false
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/error.html"
+    }
+  ]
+}
