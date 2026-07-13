@@ -12,7 +12,7 @@
     },
     {
       "src": "/.*",
-      "dest": "/error.html"
+      "dest": "/pages/error.html"
     }
   ]
 }
